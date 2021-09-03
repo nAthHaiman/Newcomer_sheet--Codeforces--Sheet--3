@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+int n,i,j;
+cin>>n;
+//taking input in an array
+int a[n];
+for(i=0;i<n;i++)
+{
+cin>>a[i];
+}
+//finding the max value from array
+int max=0;
+for(i=1;i<n;i++)
+    {
+    if(a[i]>a[max])
+    {
+        max=i;
+    }
+}
+//finding the max value from array
+int min=0;
+for(j=1;j<n;j++){
+    if(a[j]<a[min]){
+        min=j;
+    }
+}
+//replacing the max value with min value
+int temp=a[max];
+a[max]=a[min];
+a[min]=temp;
+//printing the array after replacement
+for(i=0;i<n;i++)
+{
+    cout<<a[i]<<" ";
+}
+return 0;
+}
